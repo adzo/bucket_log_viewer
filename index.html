@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <link href="./styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/lumen/bootstrap.min.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <button id="select_file_btn" class="btn btn-primary">Select file</button>
+    <input type="file" id="log_file_input" name="log_file" hidden />
+    
+    <table id="result_table" class="display" width="100%"></table> 
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
+    <script></script>
   </body>
 </html>
