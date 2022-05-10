@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -11,8 +11,8 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
       devTools: !app.isPackaged,
     },
-    autoHideMenuBar: true,
     icon: __dirname + '/icons/wasabi.png',
+    title: 'Wasabi - Bucket logs viewer'
   })
 
 
@@ -34,6 +34,9 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+  Menu.setApplicationMenu(mainMenu);
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -45,3 +48,25 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+
+//Create menu template
+const mainMenuTemplate = [
+  {
+    label: 'File',
+    submenu: [
+      {
+        label: 'Quit',
+        accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+        click() {
+          app.quit()
+        }
+      }
+    ]
+  }
+];
+
+// if mac, add empty object to menu
+if (process.platform == 'darwin') {
+  mainMenuTemplate.unshift({});
+}
