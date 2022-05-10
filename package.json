@@ -5,25 +5,21 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icons/wasabi.icns --prune=true --out=release-builds/mac",
-    "package-win": "electron-packager . wasabi-bucket-logs-viewer --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/wasabi.ico --prune=true --out=release-builds/windows --version-string.CompanyName=Wasabi --version-string.FileDescription=CE --version-string.ProductName=\"Wasabi bucket Logs Viewer\"",
-    "package-linux": "electron-packager . wasabi-bucket-logs-viewer --overwrite --asar=true --platform=linux --arch=x64 --icon=icons/wasabi.png --prune=true --out=release-builds/linux"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icons/wasabi.icns --prune=true --out=../release-builds/bucket-logs-viewer/mac",
+    "package-win": "electron-packager . wasabi-bucket-logs-viewer --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/wasabi.ico --prune=true --out=../release-builds/bucket-logs-viewer/windows --version-string.CompanyName=Wasabi --version-string.FileDescription=CE --version-string.ProductName=\"Wasabi bucket Logs Viewer\"",
+    "package-linux": "electron-packager . wasabi-bucket-logs-viewer --overwrite --asar --platform=linux --arch=x64 --icon=icons/wasabi.png --prune=true --out=../release-builds/bucket-logs-viewer/linux"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/adzo/bucket_log_viewer.git",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Wasabi",
+    "Bucket",
+    "Logs",
+    "Viewer"
   ],
-  "author": "GitHub",
+  "author": "Abdelaziz",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^18.1.0",
+    "electron": "^18.2.0",
     "electron-packager": "^15.5.1"
-  },
-  "dependencies": {
-    "convert-csv-to-json": "^1.3.3"
   }
 }

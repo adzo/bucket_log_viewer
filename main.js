@@ -8,7 +8,8 @@ function createWindow() {
     width: 1024,
     height: 900,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      devTools: !app.isPackaged,
     },
     autoHideMenuBar: true,
     icon: __dirname + '/icons/wasabi.png',
