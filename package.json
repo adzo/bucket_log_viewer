@@ -19,7 +19,7 @@
   "author": "Abdelaziz",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^18.2.0",
+    "electron": "^21.1.1",
     "electron-packager": "^15.5.1"
   }
 }
